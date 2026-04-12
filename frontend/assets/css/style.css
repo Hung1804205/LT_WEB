@@ -6,7 +6,6 @@
 
 body {
     font-family: 'Segoe UI', sans-serif;
-    /* Nền gradient hồng tím như ảnh mẫu */
     background: linear-gradient(135deg, #74ebd5, #ACB6E5, #f7797d);
     min-height: 100vh;
     display: flex;
@@ -14,7 +13,7 @@ body {
     align-items: center;
 }
 
-/* ===== Khung card chính ===== */
+/* Khung card chính */
 .container {
     display: flex;
     width: 820px;
@@ -24,7 +23,7 @@ body {
     box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== Bên trái: panel tối ===== */
+/* Bên trái: panel tối */
 .left-side {
     width: 38%;
     background: linear-gradient(170deg, #1c1c3a, #2d2b55);
@@ -90,7 +89,7 @@ body {
     background: rgba(255,255,255,0.1);
 }
 
-/* ===== Bên phải: form trắng ===== */
+/* Bên phải: form trắng */
 .right-side {
     width: 62%;
     background: white;
@@ -139,7 +138,7 @@ body {
     margin-bottom: 24px;
 }
 
-/* ===== Input ===== */
+/* Input */
 .form-group {
     margin-bottom: 14px;
 }
@@ -148,7 +147,7 @@ body {
     width: 100%;
     padding: 11px 16px;
     border: 1.5px solid #e5e5e5;
-    border-radius: 25px;   /* bo tròn như ảnh mẫu */
+    border-radius: 25px;   
     font-size: 14px;
     outline: none;
     color: #333;
@@ -165,7 +164,7 @@ body {
     color: #bbb;
 }
 
-/* ===== Nút submit ===== */
+/* Nút submit */
 .btn-submit {
     width: 100%;
     padding: 12px;
@@ -192,7 +191,7 @@ body {
     transform: none;
 }
 
-/* ===== Link chuyển trang ===== */
+/* Link chuyển trang */
 .link-text {
     text-align: center;
     margin-top: 20px;
@@ -210,7 +209,7 @@ body {
     text-decoration: underline;
 }
 
-/* ===== Thông báo ===== */
+/* Thông báo */
 .alert {
     padding: 10px 14px;
     border-radius: 10px;
@@ -231,7 +230,7 @@ body {
     border: 1px solid #b2dfdb;
 }
 
-/* ===== Responsive mobile ===== */
+
 @media (max-width: 700px) {
     .container {
         flex-direction: column;
