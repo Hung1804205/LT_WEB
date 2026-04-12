@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    /* Nền gradient hồng tím như ảnh mẫu */
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5, #f7797d);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== Khung card chính ===== */
+.container {
+    display: flex;
+    width: 820px;
+    min-height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Bên trái: panel tối ===== */
+.left-side {
+    width: 38%;
+    background: linear-gradient(170deg, #1c1c3a, #2d2b55);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 44px 30px;
+    text-align: center;
+}
+
+/* Logo bên trái */
+.logo-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 28px;
+}
+
+.logo-icon {
+    font-size: 36px;
+    background: rgba(255,255,255,0.15);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 64px;
+    text-align: center;
+}
+
+.logo-name {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.85);
+}
+
+.left-desc {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Nút "Đăng ký ngay" bên trái */
+.btn-learn {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    border-radius: 25px;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.btn-learn:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* ===== Bên phải: form trắng ===== */
+.right-side {
+    width: 62%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 44px 48px;
+    overflow-y: auto;
+}
+
+/* Logo nhỏ trên form (bên phải) */
+.top-logo {
+    flex-direction: row !important;
+    gap: 10px !important;
+    margin-bottom: 22px !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-logo .logo-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    background: #f0f0f5;
+}
+
+.top-logo .logo-name {
+    color: #1c1c3a;
+    font-size: 14px;
+}
+
+/* Tiêu đề form */
+.right-side h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1c1c3a;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #aaa;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+/* ===== Input ===== */
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 11px 16px;
+    border: 1.5px solid #e5e5e5;
+    border-radius: 25px;   /* bo tròn như ảnh mẫu */
+    font-size: 14px;
+    outline: none;
+    color: #333;
+    background: #fafafa;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #c76eb0;
+    background: white;
+}
+
+.form-group input::placeholder {
+    color: #bbb;
+}
+
+/* ===== Nút submit ===== */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #f7797d, #c76eb0);
+    color: white;
+    border: none;
+    border-radius: 25px;   /* bo tròn như ảnh mẫu */
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn-submit:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+}
+
+.btn-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ===== Link chuyển trang ===== */
+.link-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.link-text a {
+    color: #c76eb0;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.link-text a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Thông báo ===== */
+.alert {
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    margin-bottom: 14px;
+    text-align: center;
+}
+
+.alert-error {
+    background: #fff0f0;
+    color: #c0392b;
+    border: 1px solid #f5c6c6;
+}
+
+.alert-success {
+    background: #f0fff4;
+    color: #27ae60;
+    border: 1px solid #b2dfdb;
+}
+
+/* ===== Responsive mobile ===== */
+@media (max-width: 700px) {
+    .container {
+        flex-direction: column;
+        width: 94%;
+        min-height: unset;
+    }
+
+    .left-side {
+        width: 100%;
+        padding: 28px 20px;
+        min-height: 180px;
+    }
+
+    .right-side {
+        width: 100%;
+        padding: 30px 24px;
+    }
+}
