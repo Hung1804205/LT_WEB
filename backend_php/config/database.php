@@ -7,7 +7,7 @@ class Database
     {
         if (self::$connection === null) {
             $host = 'localhost';
-            $db_name = 'shop';
+            $db_name = 'ecommerce_db';
             $username = 'root';
             $password = '';
             $charset = 'utf8mb4';
