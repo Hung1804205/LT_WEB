@@ -128,7 +128,6 @@ function loadProductDetail() {
 }
 
 function setupDetailEvents() {
-  // ===== SIZE ACTIVE =====
   const sizeButtons = document.querySelectorAll(".size-btn");
 
   sizeButtons.forEach((btn) => {
@@ -141,7 +140,6 @@ function setupDetailEvents() {
     });
   });
 
-  // ===== TOAST ADD TO CART =====
   const addCartBtn = document.getElementById("addCartBtn");
   const toast = document.getElementById("toast");
 
@@ -153,7 +151,6 @@ function setupDetailEvents() {
     }, 2500);
   });
 
-  // ===== QUANTITY =====
   let qty = 1;
 
   const qtyValue = document.getElementById("qtyValue");
