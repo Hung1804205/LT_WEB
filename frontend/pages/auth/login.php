@@ -8,52 +8,53 @@
 </head>
 <body>
 
-    <div class="container">
+<div class="wrapper">
 
-        <!-- Bên trái: dark panel -->
-        <div class="left-side">
-            <div class="logo-box">
-                <span class="logo-icon">👗</span>
-                <span class="logo-name">FASHION</span>
-            </div>
-            <p class="left-desc">Mua sắm thời trang dễ dàng, nhanh chóng và tiện lợi mọi lúc mọi nơi.</p>
-           <a href="register.php" class="btn-learn">Đăng ký ngay →</a>
-        </div>
+    <!-- Bên trái: ảnh, logo và khẩu hiệu -->
+    <div class="left">
+        <div class="logo">👗 FASHION</div>
+        <h1>Nơi phong cách của bạn<br>bắt đầu</h1>
 
-        <!-- Bên phải: form -->
-        <div class="right-side">
-
-            <div class="logo-box top-logo">
-                <span class="logo-icon">👗</span>
-                <span class="logo-name">FASHION</span>
-            </div>
-
-            <h2>Welcome!</h2>
-            <p class="subtitle">Đăng nhập để tiếp tục</p>
-
-            <!-- Thông báo lỗi --> 
-            <div class="alert alert-error" id="errorMsg" style="display:none;"></div>
-
-            <div class="form-group">
-                <input type="email" id="email" placeholder="Email">
-            </div>
-
-            <div class="form-group">
-                <input type="password" id="password" placeholder="Password">
-            </div>
-
-            <button class="btn-submit" id="btnLogin">Đăng nhập</button>
-
-            <p class="link-text">
-                Chưa có tài khoản? <a href="register.php">Đăng ký</a>
-            </p>
-
-        </div>
-
+        <!-- Lưới ảnh thời trang -->
+       <div class="photo-grid">
+    <img src="image/1.jpg" alt="Fashion 1">
+    <img src="image/2.jpg" alt="Fashion 2">
+    <img src="image/3.jpg" alt="Fashion 3">
+    <img src="image/4.jfif" alt="Fashion 4">
+    <img src="image/5.jpg" alt="Fashion 5">
+</div>
     </div>
 
-    <script src="/assets/js/api.js"></script>
-    <script src="/assets/js/login.js"></script>
+    <!-- Bên phải: form đăng nhập -->
+    <div class="right">
+        <div class="form-box">
+
+            <h1>Đăng nhập</h1>
+            <p class="sub">Trải nghiệm không gian thời trang dành riêng cho bạn!</p>
+
+             <div id="errorMsg" class="error-box" style="display:none;"></div>
+
+            <div class="field">
+                <label>Email</label>
+                <input type="email" id="email">
+            </div>
+
+            <div class="field">
+                <label>Mật khẩu</label>
+                <input type="password" id="password">
+            </div>
+
+            <button id="btnLogin" class="btn-login">Đăng nhập</button>
+
+            <p class="switch">Chưa có tài khoản? <a href="/LT_WEB/frontend/pages/auth/register.php">Đăng ký</a></p>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="/LT_WEB/frontend/assets/js/api.js"></script>
+<script src="/LT_WEB/frontend/assets/js/auth.js"></script>
 
 </body>
 </html>

@@ -6,246 +6,200 @@
 
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #74ebd5, #ACB6E5, #f7797d);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Khung card chính */
-.container {
-    display: flex;
-    width: 820px;
-    min-height: 500px;
-    border-radius: 20px;
+    height: 100vh;
     overflow: hidden;
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+    background: #f0f2f5;
 }
 
-/* Bên trái: panel tối */
-.left-side {
-    width: 38%;
-    background: linear-gradient(170deg, #1c1c3a, #2d2b55);
-    color: white;
+.wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+/* Bên trái */
+.left {
+    width: 55%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 44px 30px;
-    text-align: center;
+    padding: 60px;
+    background: #f0f2f5;
+    position: relative;
 }
 
-/* Logo bên trái */
-.logo-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 28px;
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1877f2;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
 }
 
-.logo-icon {
+.left h1 {
     font-size: 36px;
-    background: rgba(255,255,255,0.15);
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 64px;
-    text-align: center;
-}
-
-.logo-name {
-    font-size: 13px;
     font-weight: 700;
-    letter-spacing: 3px;
-    color: rgba(255,255,255,0.85);
+    color: #111;
+    line-height: 1.3;
+    margin-bottom: 40px;
+    max-width: 420px;
 }
 
-.left-desc {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.55);
-    line-height: 1.8;
-    margin-bottom: 30px;
+/* Lưới ảnh */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 140px);
+    gap: 8px;
+    max-width: 460px;
 }
 
-/* Nút "Đăng ký ngay" bên trái */
-.btn-learn {
-    display: inline-block;
-    padding: 10px 24px;
-    border: 1.5px solid rgba(255,255,255,0.4);
-    border-radius: 25px;
-    color: white;
-    font-size: 13px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.2s;
+.photo-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-.btn-learn:hover {
-    background: rgba(255,255,255,0.1);
+/* ảnh đầu lớn hơn các ảnh còn lại */
+.photo-grid img:first-child {
+    grid-column: span 2;
 }
 
-/* Bên phải: form trắng */
-.right-side {
-    width: 62%;
+/* Bên phải */
+.right {
+    width: 45%;
     background: white;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 44px 48px;
-    overflow-y: auto;
-}
-
-/* Logo nhỏ trên form (bên phải) */
-.top-logo {
-    flex-direction: row !important;
-    gap: 10px !important;
-    margin-bottom: 22px !important;
     align-items: center;
     justify-content: center;
+    padding: 40px 20px;
+    overflow-y: auto;
+    border-left: 1px solid #e0e0e0;
 }
 
-.top-logo .logo-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    line-height: 40px;
-    background: #f0f0f5;
+.form-box {
+    width: 100%;
+    max-width: 360px;
 }
 
-.top-logo .logo-name {
-    color: #1c1c3a;
-    font-size: 14px;
-}
-
-/* Tiêu đề form */
-.right-side h2 {
-    font-size: 26px;
+.form-box h2 {
+    font-size: 24px;
     font-weight: 700;
-    color: #1c1c3a;
-    margin-bottom: 4px;
-    text-align: center;
+    color: #111;
+    margin-bottom: 6px;
 }
 
-.subtitle {
-    font-size: 13px;
-    color: #aaa;
-    text-align: center;
+.sub {
+    color: #999;
+    font-size: 14px;
     margin-bottom: 24px;
 }
 
-/* Input */
-.form-group {
+.field {
     margin-bottom: 14px;
 }
 
-.form-group input {
+.field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+.field input {
     width: 100%;
-    padding: 11px 16px;
-    border: 1.5px solid #e5e5e5;
-    border-radius: 25px;   
+    padding: 11px 14px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
     font-size: 14px;
     outline: none;
-    color: #333;
+    color: #222;
     background: #fafafa;
     transition: border-color 0.2s;
 }
 
-.form-group input:focus {
-    border-color: #c76eb0;
+.field input:focus {
+    border-color: #1877f2;
     background: white;
 }
 
-.form-group input::placeholder {
-    color: #bbb;
-}
-
-/* Nút submit */
-.btn-submit {
+.btn-login {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, #f7797d, #c76eb0);
+    background: #1877f2;
     color: white;
     border: none;
-    border-radius: 25px;   /* bo tròn như ảnh mẫu */
+    border-radius: 8px;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
-    margin-top: 6px;
-    letter-spacing: 0.5px;
-    transition: opacity 0.2s, transform 0.1s;
+    margin-top: 8px;
+    transition: background 0.2s;
 }
 
-.btn-submit:hover {
-    opacity: 0.88;
-    transform: translateY(-1px);
+.btn-login:hover {
+    background: #1558b0;
 }
 
-.btn-submit:disabled {
-    opacity: 0.5;
+.btn-login:disabled {
+    background: #aaa;
     cursor: not-allowed;
-    transform: none;
 }
 
-/* Link chuyển trang */
-.link-text {
+.switch {
     text-align: center;
     margin-top: 20px;
     font-size: 13px;
-    color: #aaa;
+    color: #888;
 }
 
-.link-text a {
-    color: #c76eb0;
+.switch a {
+    color: #1877f2;
     font-weight: 700;
     text-decoration: none;
 }
 
-.link-text a:hover {
+.switch a:hover {
     text-decoration: underline;
 }
 
-/* Thông báo */
-.alert {
+.error-box {
     padding: 10px 14px;
-    border-radius: 10px;
-    font-size: 13px;
-    margin-bottom: 14px;
-    text-align: center;
-}
-
-.alert-error {
     background: #fff0f0;
     color: #c0392b;
     border: 1px solid #f5c6c6;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 16px;
 }
 
-.alert-success {
+.success-box {
+    padding: 10px 14px;
     background: #f0fff4;
     color: #27ae60;
     border: 1px solid #b2dfdb;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 16px;
 }
 
-
-@media (max-width: 700px) {
-    .container {
+@media (max-width: 768px) {
+    .wrapper {
         flex-direction: column;
-        width: 94%;
-        min-height: unset;
+        height: auto;
+        overflow: auto;
     }
-
-    .left-side {
-        width: 100%;
-        padding: 28px 20px;
-        min-height: 180px;
-    }
-
-    .right-side {
+    .left {
         width: 100%;
         padding: 30px 24px;
+    }
+    .right {
+        width: 100%;
+        padding: 30px 24px;
+        border-left: none;
+    }
+    body {
+        overflow: auto;
     }
 }
