@@ -1,4 +1,5 @@
-// file này xử lý về guard, login, register, profile, logout
+// file này xử lý về guard, login, register, logout, profile
+
 
 // Kiểm tra user đã đăng nhập chưa, nếu chưa thì chuyển về login 
 function checkLogin() {
