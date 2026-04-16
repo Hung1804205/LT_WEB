@@ -95,7 +95,7 @@ if (btnRegister) {
             return
         }
 
-        btnRegister.innerText = "Dang xu ly..."
+        btnRegister.innerText = "Đang xử lý..."
         btnRegister.disabled = true
 
         try {
@@ -109,7 +109,7 @@ if (btnRegister) {
 
             if (res.success == true) {
                 thanhcong.style.display = "block"
-                thanhcong.innerText = "Dang ky thanh cong! Dang chuyen trang..."
+                thanhcong.innerText = "Đăng ký thành công! Đang chuyển trang..."
                 setTimeout(function() {
                     window.location.href = "/frontend/pages/auth/login.php"
                 }, 1500)
@@ -122,7 +122,7 @@ if (btnRegister) {
 
         } catch(err) {
             loi.style.display = "block"
-            loi.innerText = "Loi ket noi server!"
+            loi.innerText = "Lỗi kết nối server!"
             btnRegister.innerText = "Get Started"
             btnRegister.disabled = false
         }
@@ -214,7 +214,7 @@ async function luu() {
 
     let btnSave = document.getElementById("btnSave")
     btnSave.disabled = true
-    btnSave.innerText = "Dang luu..."
+    btnSave.innerText = "Đang lưu..."
 
     try {
         let res = await apiPut("/auth/me", {
@@ -235,11 +235,11 @@ async function luu() {
         }
 
     } catch(err) {
-        alert("Loi ket noi server!")
+        alert("Lỗi kết nối server!")
     }
 
     btnSave.disabled  = false
-    btnSave.innerText = "Luu thay doi"
+    btnSave.innerText = "Lưu thay đổi"
 }
 
 // load đơn hàng của người dùng
