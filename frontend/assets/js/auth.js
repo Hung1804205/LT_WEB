@@ -10,7 +10,6 @@ function checkLogin() {
     }
 }
 
-
 // Xử lý nút đăng nhập
 let btnLogin = document.getElementById("btnLogin")
 if (btnLogin) {
@@ -21,9 +20,16 @@ if (btnLogin) {
         let thongbao = document.getElementById("errorMsg")
 
         // Nếu nhập thiếu thông tin thì hiện thông báo lỗi
-         if (email == "" || pass == "") { 
+        if (email == "" || pass == "") { 
             thongbao.style.display = "block"
             thongbao.innerText = "Vui lòng nhập đầy đủ thông tin!"
+            return
+        }
+
+        // kiểm tra không đc có dấu cách trong mật khẩu
+        if (pass.includes(" ")) {
+            thongbao.style.display = "block"
+            thongbao.innerText = "Mật khẩu không được có dấu cách!"
             return
         }
 
@@ -92,6 +98,13 @@ if (btnRegister) {
         if (pass.length < 6) {
             loi.style.display = "block"
             loi.innerText = "Mật khẩu phải có ít nhất 6 ký tự!"
+            return
+        }
+
+        // kiểm tra không đc có dấu cách trong mật khẩu
+        if (pass.includes(" ")) {
+            loi.style.display = "block"
+            loi.innerText = "Mật khẩu không được có dấu cách!"
             return
         }
 
@@ -292,4 +305,14 @@ function dich(s) {
     if (s == "delivered") return "Đã giao"
     if (s == "cancelled") return "Đã hủy"
     return s
+}
+
+// con mắt xem mật khẩu
+function xemPass(id) {
+    let input = document.getElementById(id)
+    if (input.type == "password") {
+        input.type = "text"
+    } else {
+        input.type = "password"
+    }
 }

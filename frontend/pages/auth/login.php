@@ -16,13 +16,13 @@
         <h1>Nơi phong cách của bạn<br>bắt đầu</h1>
 
         <!-- Lưới ảnh thời trang -->
-       <div class="photo-grid">
-    <img src="image/1.jpg" alt="Fashion 1">
-    <img src="image/2.jpg" alt="Fashion 2">
-    <img src="image/3.jpg" alt="Fashion 3">
-    <img src="image/4.jfif" alt="Fashion 4">
-    <img src="image/5.jpg" alt="Fashion 5">
-</div>
+        <div class="photo-grid">
+            <img src="image/1.jpg" alt="Fashion 1">
+            <img src="image/2.jpg" alt="Fashion 2">
+            <img src="image/3.jpg" alt="Fashion 3">
+            <img src="image/4.jfif" alt="Fashion 4">
+            <img src="image/5.jpg" alt="Fashion 5">
+        </div>
     </div>
 
     <!-- Bên phải: form đăng nhập -->
@@ -32,7 +32,7 @@
             <h1>Đăng nhập</h1>
             <p class="sub">Trải nghiệm không gian thời trang dành riêng cho bạn!</p>
 
-             <div id="errorMsg" class="error-box" style="display:none;"></div>
+            <div id="errorMsg" class="error-box" style="display:none;"></div>
 
             <div class="field">
                 <label>Email</label>
@@ -41,7 +41,10 @@
 
             <div class="field">
                 <label>Mật khẩu</label>
-                <input type="password" id="password">
+                <div class="pass-wrap">
+                    <input type="password" id="password">
+                    <span class="eye-icon" onclick="xemPass('password')">👁</span>
+                </div>
             </div>
 
             <button id="btnLogin" class="btn-login">Đăng nhập</button>

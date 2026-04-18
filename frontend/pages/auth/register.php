@@ -16,12 +16,12 @@
         <h1>Nơi những tín đồ thời trang hội tụ</h1>
 
         <div class="photo-grid">
-    <img src="image/6.jpg" alt="Fashion 6">
-    <img src="image/7.jpg" alt="Fashion 7">
-    <img src="image/8.jpg" alt="Fashion 8">
-    <img src="image/9.jpg" alt="Fashion 9">
-    <img src="image/10.jpg" alt="Fashion 10">
-</div>
+            <img src="image/6.jpg" alt="Fashion 6">
+            <img src="image/7.jpg" alt="Fashion 7">
+            <img src="image/8.jpg" alt="Fashion 8">
+            <img src="image/9.jpg" alt="Fashion 9">
+            <img src="image/10.jpg" alt="Fashion 10">
+        </div>
     </div>
 
     <!-- Bên phải: form đăng ký -->
@@ -46,7 +46,10 @@
 
             <div class="field">
                 <label>Mật khẩu</label>
-                <input type="password" id="password">
+                <div class="pass-wrap">
+                   <input type="password" id="password">
+                   <span class="eye-icon" onclick="xemPass('password')">👁</span>
+                </div>
             </div>
 
             <div class="field">

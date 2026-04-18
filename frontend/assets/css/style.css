@@ -203,3 +203,40 @@ body {
         overflow: auto;
     }
 }
+/* con mắt xem mật khẩu */
+.pass-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.pass-wrap input {
+    width: 100%;
+    padding: 11px 44px 11px 14px !important;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    color: #222;
+    background: #fafafa;
+}
+
+.pass-wrap input:focus {
+    border-color: #1877f2 !important;
+    background: white !important;
+}
+
+.pass-wrap .eye-icon {
+    position: absolute;
+    right: 12px;
+    font-size: 17px;
+    cursor: pointer;
+    color: #aaa;
+    pointer-events: all;
+    user-select: none;
+    z-index: 10;
+}
+
+.pass-wrap .eye-icon:hover {
+    color: #555;
+}
