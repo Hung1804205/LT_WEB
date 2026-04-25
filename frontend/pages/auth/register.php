@@ -50,6 +50,7 @@
                    <input type="password" id="password">
                    <span class="eye-icon" onclick="xemPass('password')">👁</span>
                 </div>
+                <div id="passwordError" class="error-text" style="display:none;"></div>
             </div>
 
             <div class="field">

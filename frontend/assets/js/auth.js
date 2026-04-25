@@ -1,5 +1,29 @@
 // file này xử lý về guard, login, register, logout, profile
 
+// Hàm validate mật khẩu
+function validatePassword(password) {
+    // Kiểm tra mật khẩu không được để trống
+    if (password == "" ) {
+        return "Mật khẩu không được để trống";
+    }
+
+    // Kiểm tra mật khẩu phải có ít nhất 6 ký tự
+    if (password.length < 6) {
+        return "Mật khẩu phải có ít nhất 6 ký tự";
+    }
+
+    // Kiểm tra mật khẩu không được có dấu cách
+    if (password.includes(" ")) {
+        return "Mật khẩu không được có dấu cách";
+    }
+
+    // Kiểm tra chỉ cho phép ký tự ASCII
+    if (!/^[\x00-\x7F]+$/.test(password)) {
+        return "Mật khẩu không được chứa ký tự có dấu";
+    }
+
+    return null; // Valid password
+}
 
 // Kiểm tra user đã đăng nhập chưa, nếu chưa thì chuyển về login 
 function checkLogin() {
@@ -18,18 +42,31 @@ if (btnLogin) {
         let email = document.getElementById("email").value
         let pass  = document.getElementById("password").value
         let thongbao = document.getElementById("errorMsg")
+        let passwordError = document.getElementById("passwordError")
 
-        // Nếu nhập thiếu thông tin thì hiện thông báo lỗi
-        if (email == "" || pass == "") { 
+        // Ẩn tất cả các thông báo lỗi trước
+        thongbao.style.display = "none"
+        if (passwordError) {
+            passwordError.style.display = "none"
+        }
+
+        // Nếu nhập thiếu email
+        if (email == "") { 
             thongbao.style.display = "block"
-            thongbao.innerText = "Vui lòng nhập đầy đủ thông tin!"
+            thongbao.innerText = "Vui lòng nhập email!"
             return
         }
 
-        // kiểm tra không đc có dấu cách trong mật khẩu
-        if (pass.includes(" ")) {
-            thongbao.style.display = "block"
-            thongbao.innerText = "Mật khẩu không được có dấu cách!"
+        // Validate mật khẩu
+        let passError = validatePassword(pass)
+        if (passError) {
+            if (passwordError) {
+                passwordError.style.display = "block"
+                passwordError.innerText = passError
+            } else {
+                thongbao.style.display = "block"
+                thongbao.innerText = passError
+            }
             return
         }
 
@@ -84,27 +121,31 @@ if (btnRegister) {
         let diachi  = document.getElementById("address").value
 
         let loi     = document.getElementById("errorMsg")
+        let passwordError = document.getElementById("passwordError")
         let thanhcong = document.getElementById("successMsg")
 
         loi.style.display = "none"
         thanhcong.style.display = "none"
+        if (passwordError) {
+            passwordError.style.display = "none"
+        }
 
-        if (ten == "" || email == "" || pass == "" || sdt == "" || diachi == "") {
+        if (ten == "" || email == "" || sdt == "" || diachi == "") {
             loi.style.display = "block"
             loi.innerText = "Vui lòng nhập đầy đủ thông tin!"
             return
         }
 
-        if (pass.length < 6) {
-            loi.style.display = "block"
-            loi.innerText = "Mật khẩu phải có ít nhất 6 ký tự!"
-            return
-        }
-
-        // kiểm tra không đc có dấu cách trong mật khẩu
-        if (pass.includes(" ")) {
-            loi.style.display = "block"
-            loi.innerText = "Mật khẩu không được có dấu cách!"
+        // Validate mật khẩu
+        let passError = validatePassword(pass)
+        if (passError) {
+            if (passwordError) {
+                passwordError.style.display = "block"
+                passwordError.innerText = passError
+            } else {
+                loi.style.display = "block"
+                loi.innerText = passError
+            }
             return
         }
 
